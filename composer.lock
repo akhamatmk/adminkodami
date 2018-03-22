@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "045d97010e4456d98c66376b719ae23a",
+    "content-hash": "5b309414bd265b28e6339d3df2258c26",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -454,17 +454,59 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v5.6.11",
+            "name": "kodami/models",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "195ba6a67bdad2a23105c7ab410cd43e0f20bb73"
+                "url": "https://github.com/akhamatvarokah/kodami-package.git",
+                "reference": "eb47c1ff4dfcc938d089ca05be15c0be8fdec492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/195ba6a67bdad2a23105c7ab410cd43e0f20bb73",
-                "reference": "195ba6a67bdad2a23105c7ab410cd43e0f20bb73",
+                "url": "https://api.github.com/repos/akhamatvarokah/kodami-package/zipball/eb47c1ff4dfcc938d089ca05be15c0be8fdec492",
+                "reference": "eb47c1ff4dfcc938d089ca05be15c0be8fdec492",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9",
+                "orchestra/testbench": "^3.1",
+                "phpunit/phpunit": "^6.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kodami\\Models": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "akhamat miftakul khoir",
+                    "email": "akhamatmkhoir@gmail.com"
+                }
+            ],
+            "description": "it's models kodami aplication",
+            "time": "2018-03-22T03:43:22+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v5.6.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
+                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
                 "shasum": ""
             },
             "require": {
@@ -473,7 +515,7 @@
                 "erusev/parsedown": "~1.7",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "league/flysystem": "~1.0",
+                "league/flysystem": "^1.0.8",
                 "monolog/monolog": "~1.12",
                 "nesbot/carbon": "^1.24.1",
                 "php": "^7.1.3",
@@ -589,7 +631,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-09T16:53:27+00:00"
+            "time": "2018-03-14T17:29:38+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -886,16 +928,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.24.1",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41"
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "shasum": ""
             },
             "require": {
@@ -935,7 +977,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-09T15:49:34+00:00"
+            "time": "2018-03-19T15:50:49+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2289,6 +2331,76 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-oracle",
+            "version": "v8.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables.git",
+                "reference": "cb052ed2608c266b1f942e1f845b8275696cd798"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/cb052ed2608c266b1f942e1f845b8275696cd798",
+                "reference": "cb052ed2608c266b1f942e1f845b8275696cd798",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.4.*|5.5.*|5.6.*",
+                "illuminate/filesystem": "5.4.*|5.5.*|5.6.*",
+                "illuminate/http": "5.4.*|5.5.*|5.6.*",
+                "illuminate/support": "5.4.*|5.5.*|5.6.*",
+                "illuminate/view": "5.4.*|5.5.*|5.6.*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5"
+            },
+            "suggest": {
+                "yajra/laravel-datatables-buttons": "Plugin for server-side exporting of dataTable.",
+                "yajra/laravel-datatables-fractal": "Plugin for server-side response using Fractal.",
+                "yajra/laravel-datatables-html": "Plugin for server-side HTML builder of dataTable."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Yajra\\DataTables\\DataTablesServiceProvider"
+                    ],
+                    "aliases": {
+                        "DataTables": "Yajra\\DataTables\\Facades\\DataTables"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\DataTables\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "jQuery DataTables API for Laravel 4|5",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "laravel"
+            ],
+            "time": "2018-02-16T08:22:10+00:00"
         }
     ],
     "packages-dev": [
@@ -2617,16 +2729,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v2.0.0",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "4e310ef9384f53ee8dda8736afb3cbaf320753a0"
+                "reference": "245958b02c6a9edf24627380f368333ac5413a51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/4e310ef9384f53ee8dda8736afb3cbaf320753a0",
-                "reference": "4e310ef9384f53ee8dda8736afb3cbaf320753a0",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/245958b02c6a9edf24627380f368333ac5413a51",
+                "reference": "245958b02c6a9edf24627380f368333ac5413a51",
                 "shasum": ""
             },
             "require": {
@@ -2675,7 +2787,7 @@
                 "php",
                 "symfony"
             ],
-            "time": "2018-02-18T12:29:27+00:00"
+            "time": "2018-03-21T20:11:24+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3944,16 +4056,16 @@
         },
         {
             "name": "symfony/thanks",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/thanks.git",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94"
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/thanks/zipball/9474ce305253c2f0bc20322ff8e9973cf25c9a94",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/bade4992c46ed722162694b4af8d72f84402819a",
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a",
                 "shasum": ""
             },
             "require": {
@@ -3983,7 +4095,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-            "time": "2018-02-02T13:47:40+00:00"
+            "time": "2018-03-14T21:51:39+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -4078,7 +4190,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "kodami/models": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

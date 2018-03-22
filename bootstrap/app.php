@@ -25,7 +25,11 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+
+
 $app->register(Collective\Html\HtmlServiceProvider::class);
+$app->register(Kodami\Models\ModelServiceProvider::class);
+//$app->register(Yajra\DataTables\DataTablesServiceProvider::class);
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,

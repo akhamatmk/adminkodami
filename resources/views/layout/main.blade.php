@@ -27,6 +27,8 @@
       <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
       <!-- color CSS -->
       <link href="{{ asset('assets/css/colors/megna-dark.css') }}" id="theme" rel="stylesheet">
+
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -128,6 +130,9 @@
          </div>
       </div>
       <script src="{{ asset('assets/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+      <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
       <!-- Bootstrap Core JavaScript -->
       <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
       <!-- Menu Plugin JavaScript -->
@@ -141,7 +146,7 @@
       <script src="{{ asset('assets/plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
       <!--Morris JavaScript -->
       <script src="{{ asset('assets/plugins/bower_components/raphael/raphael-min.js') }}"></script>
-      <script src="{{ asset('assets/plugins/bower_components/morrisjs/morris.js') }}"></script>
+      
       <!-- chartist chart -->
       <script src="{{ asset('assets/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>
       <script src="{{ asset('assets/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
@@ -151,7 +156,7 @@
       <script src="{{ asset('assets/plugins/bower_components/calendar/dist/cal-init.js') }}"></script>
       <!-- Custom Theme JavaScript -->
       <script src="{{ asset('assets/js/custom.min.js') }}"></script>
-      <script src="{{ asset('assets/js/dashboard1.js?v=123') }}"></script>
+      <script src="{{ asset('assets/js/dashboard1.js?v=444') }}"></script>
       <!-- Custom tab JavaScript -->
       <script src="{{ asset('assets/js/cbpFWTabs.js') }}"></script>
       <script type="text/javascript">
@@ -164,5 +169,8 @@
       <script src="{{ asset('assets/plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
       <!--Style Switcher -->
       <script src="{{ asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js') }}"></script>
+
+      @yield('script')
+
    </body>
 </html>
