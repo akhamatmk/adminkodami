@@ -12,6 +12,7 @@
 				        <thead>
 				            <tr>
 				                <th>id</th>
+				                <th>Nama Product</th>
 				                <th>Descripsi</th>
 				                <th>Image</th>
 				                <th>No Urut</th>
@@ -35,12 +36,14 @@ $(function() {
 	        ajax: '{{ URL::to("banners/data") }}',
 	        columns: [
 	            { data: 'id', name: 'id' },
+	            { data: 'name_product', name: 'name_product' },
 	            { data: 'descripsi', name: 'descripsi' },
 	            { data: 'image_base', name: 'image_base' },
 	            { data: 'urut', name: 'urut' },
 	            { data: 'action', name: 'action' }
 	        ]
 	    });
+
 	});
 </script>
 @endsection

@@ -27,6 +27,15 @@ class BannerController extends Controller
             ->addColumn('action', function($data){
             	return "<a type='button' class='btn btn-primary'>Edit</a> <a type='button' class='btn btn-danger'>Delete</a>";
             })
+            ->addColumn('status', function($data){
+            	return "<a type='button' class='btn btn-primary'>Edit</a> <a type='button' class='btn btn-danger'>Delete</a>";
+            })
+            ->addColumn('name_product', function($data){
+            	if(isset($data->product))
+            		return $data->product->name;
+            	else
+            		return "-";
+            })
             ->rawColumns(['image_base', 'action'])
             ->make();
     }
