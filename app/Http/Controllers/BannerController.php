@@ -28,7 +28,7 @@ class BannerController extends Controller
             	return "<a type='button' class='btn btn-primary'>Edit</a> <a type='button' class='btn btn-danger'>Delete</a>";
             })
             ->addColumn('status', function($data){
-            	return "<a type='button' class='btn btn-primary'>Edit</a> <a type='button' class='btn btn-danger'>Delete</a>";
+            	return "";
             })
             ->addColumn('name_product', function($data){
             	if(isset($data->product))
