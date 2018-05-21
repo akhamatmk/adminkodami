@@ -25,10 +25,17 @@
       <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
       <!-- Custom CSS -->
       <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+      
+      <link href="{{ asset('assets/css/costume.css') }}" rel="stylesheet">
       <!-- color CSS -->
       <link href="{{ asset('assets/css/colors/megna-dark.css') }}" id="theme" rel="stylesheet">
 
       <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -123,15 +130,21 @@
       <div id="page-wrapper">
          <div class="container-fluid">
 
-            @include('layout.breadcrumb')            
-
             @yield('content')
          
          </div>
       </div>
       <script src="{{ asset('assets/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
       <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+      <script src="{{ asset('assets/plugins/bower_components/main.js') }}"></script>
+      <script src="{{ asset('assets/plugins/bower_components/jquery.maskMoney.js') }}"></script>
+      <script src="{{ asset('assets/plugins/bower_components/sweetalert.min.js') }}"></script>
 
       <!-- Bootstrap Core JavaScript -->
       <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -146,17 +159,20 @@
       <script src="{{ asset('assets/plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
       <!--Morris JavaScript -->
       <script src="{{ asset('assets/plugins/bower_components/raphael/raphael-min.js') }}"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
       
       <!-- chartist chart -->
-      <script src="{{ asset('assets/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>
-      <script src="{{ asset('assets/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+     <!--  <script src="{{ asset('assets/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>
+      <script src="{{ asset('assets/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script> -->
+     
       <!-- Calendar JavaScript -->
       <script src="{{ asset('assets/plugins/bower_components/moment/moment.js') }}"></script>
       <script src="{{ asset('assets/plugins/bower_components/calendar/dist/fullcalendar.min.js') }}"></script>
       <script src="{{ asset('assets/plugins/bower_components/calendar/dist/cal-init.js') }}"></script>
       <!-- Custom Theme JavaScript -->
       <script src="{{ asset('assets/js/custom.min.js') }}"></script>
-      <script src="{{ asset('assets/js/dashboard1.js?v=444') }}"></script>
+      <script src="{{ asset('assets/js/dashboard1.js?v=5') }}"></script>
       <!-- Custom tab JavaScript -->
       <script src="{{ asset('assets/js/cbpFWTabs.js') }}"></script>
       <script type="text/javascript">
