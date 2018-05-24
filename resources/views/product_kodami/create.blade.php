@@ -10,7 +10,7 @@
        </div>
        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 			<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-				<a href="{{ URL('product/create') }}" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" target="_top"> <i class="fa fa-plus"></i> Tambah Product</a>
+				<a href="{{ URL('product') }}" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" target="_top"> <i class="fa fa-reply"></i> Back Product</a>
 				<ol class="breadcrumb">
 					<li><a href="javascript:void(0)">Dashboard</a></li>
 					<li class="active">Dashboard 1</li>
@@ -74,6 +74,13 @@
 					    </div>
 					</div>
 
+					<div class="form-group">
+					    <label class="control-label col-sm-3" for="min_order">Upload Image :</label>
+					    <div class="col-sm-9">
+					    	<div id="dropzone" class="dropzone"></div>
+					    </div>
+					</div>
+					
 				</form>
 			</div>
 	   </div>
@@ -84,7 +91,15 @@
 @section('script')
 	<script>
 	    $(function() {
-	    	
+	    	$("#dropzone").dropzone({ 
+	            url: "{{ URL('upload/image') }}", 
+	            maxFilesize: 8, 
+	            paramName: "image", 
+	            addRemoveLinks: true,
+	            sending: function(file, xhr, formData) {
+    				formData.append("_token", "{{ csrf_token() }}");
+				},
+	        });
 		});
 	</script>
 @endsection

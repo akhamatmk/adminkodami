@@ -36,6 +36,8 @@
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
+      <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -161,6 +163,8 @@
       <script src="{{ asset('assets/plugins/bower_components/raphael/raphael-min.js') }}"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+      
+      <script src="{{ asset('assets/js/dropzone.js?v=1') }}"></script>
       
       <!-- chartist chart -->
      <!--  <script src="{{ asset('assets/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>

@@ -24,7 +24,7 @@
 	      	<div class="white-box">
 				<h3 class="box-title">Purchase Order</h3>
 				<form class="form-horizontal" method="POST" action="{{ URL("purchase-order") }}">
-					@csrf 
+					@csrf
 
 					<div class="form-group">
 					    <label class="control-label col-sm-3" for="rfq_id">RFQ NUMBER:</label>
