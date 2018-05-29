@@ -22,11 +22,19 @@ Route::resource('product', 'ProductKodamiController');
 
 Route::prefix('vendor')->group(function () {
 	Route::get('intern', 'Vendor\InternController@index');
+	Route::get('intern/getData', 'Vendor\InternController@getData');
 	Route::get('intern/create', 'Vendor\InternController@create');
+	Route::get('intern/{id}/edit', 'Vendor\InternController@edit');
+	Route::get('intern/destroy/{id}', 'Vendor\InternController@destroy');
 	Route::post('intern', 'Vendor\InternController@store');
+	Route::post('intern/{id}/edit', 'Vendor\InternController@put');
 
-	Route::get('getData')->uses('VendorController@getData');
-	Route::resource('/', 'VendorController');
+  	Route::get('koprasi', 'Vendor\KoprasiController@index');
+  	Route::get('koprasi/getData', 'Vendor\KoprasiController@getData');
+  	Route::get('koprasi/getUnregisteredUser', 'Vendor\KoprasiController@getUnregisteredUser');
+  	Route::get('koprasi/{id}/view', 'Vendor\KoprasiController@view');
+  	Route::get('koprasi/{id}/process', 'Vendor\KoprasiController@process');
+  	Route::post('koprasi/{id}/process', 'Vendor\KoprasiController@store_process');
 });
 
 

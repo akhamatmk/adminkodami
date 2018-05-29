@@ -49,7 +49,7 @@ class PurchaseOrderController extends Controller
         $currency = Config("constanta.currency");
         $solicitation_type = Config("constanta.solicitation_type");
 
-        DB::statement(DB::raw('set @rownum=0'));        
+        DB::statement(DB::raw('set @rownum=0'));
         $model = PurchaseOrder::select('purchase_orders.*', DB::raw('@rownum  := @rownum  + 1 AS row'));
 
         return DataTables::eloquent($model)
