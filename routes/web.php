@@ -14,11 +14,17 @@ Route::get('place/getAjaxRegency')->uses('PlaceController@getAjaxRegency');
 
 Route::get('login')->uses('Auth\LoginController@index')->name('login');
 Route::post('login')->uses('Auth\LoginController@check');
+
+Route::post('banners/{id}/edit')->uses('BannerController@put');
+Route::get('banners/destroy/{id}')->uses('BannerController@destroy');
 Route::resource('banners', 'BannerController');
 
 Route::get('product/getData', 'ProductKodamiController@getData');
 Route::resource('product', 'ProductKodamiController');
 
+Route::get('category/ajaxGetChild', 'CategoryController@ajaxGetChild');
+Route::get('category/criteria', 'CategoryController@criteria');
+Route::get('category/spesification', 'CategoryController@spesification');
 
 Route::prefix('vendor')->group(function () {
 	Route::get('intern', 'Vendor\InternController@index');

@@ -3,47 +3,85 @@
 @section('title', 'Admin Koperasi Dana Masyarakat Indonesia')
 
 @section('content')
-<div class="row">
-   <div class="col-sm-8">
-      <div class="white-box">
-			<h3 class="box-title">Banners</h3>
+	
+	<div class="row bg-title">
+       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<h4 class="page-title">Dashboard 1</h4>
+       </div>
+       <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+			<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+				<a href="{{ URL('banners/create') }}" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" target="_top"> <i class="fa fa-plus"></i> TAMBAH Banner</a>
+				<ol class="breadcrumb">
+					<li><a href="javascript:void(0)">Dashboard</a></li>
+					<li class="active">Dashboard 1</li>
+				</ol>
+       	</div>
+       <!-- /.col-lg-12 -->
+    </div>
+
+	<div class="row">
+	   	<div class="col-sm-12">
+	      	<div class="white-box">
+				<h3 class="box-title">Banner</h3>
 				<div class="table-responsive">				
-					<table class="table color-table info-table" id="users-table">
+					<table class="table color-table info-table" id="banner-table">
 				        <thead>
 				            <tr>
-				                <th>id</th>
-				                <th>Nama Product</th>
-				                <th>Descripsi</th>
+				                <th>No</th>
+				                <th width="20%">Deskripsi</th>
 				                <th>Image</th>
-				                <th>No Urut</th>
+				                <th>urut</th>
 				                <th></th>
 				            </tr>
 				        </thead>
     				</table>
 				</div>
 			</div>
-   </div>
-</div>
+	   </div>
+	</div>
+
 @endsection
 
 @section('script')
+	<script>
 
-<script>
-$(function() {
-    $('#users-table').DataTable({
+		function remove()
+			{
+				$(".delete").click(function(){
+					var id = $(this).data("id");
+
+					swal({
+					  	title: "Are you sure?",
+					  	text: "Once deleted, you will not be able to recover this imaginary file!",
+					  	icon: "warning",
+					  	buttons: true,
+					  	dangerMode: true,
+					})
+					.then((willDelete) => {
+					  	if (willDelete) {
+					    	document.location = "{{ URL('banners/destroy') }}/"+id;
+					  	} else {
+					    	swal("Your imaginary file is safe!");
+					  	}
+					});
+
+				})				
+			}   
+
+		var table = $('#banner-table').DataTable({
 	        processing: true,
 	        serverSide: true,
 	        ajax: '{{ URL::to("banners/data") }}',
+	        initComplete: function( settings, json ) {
+		        remove();
+  			},
 	        columns: [
-	            { data: 'id', name: 'id' },
-	            { data: 'name_product', name: 'name_product' },
+	            { data: 'row', name: 'row' },
 	            { data: 'descripsi', name: 'descripsi' },
 	            { data: 'image_base', name: 'image_base' },
 	            { data: 'urut', name: 'urut' },
 	            { data: 'action', name: 'action' }
 	        ]
 	    });
-
-	});
-</script>
+	</script>
 @endsection

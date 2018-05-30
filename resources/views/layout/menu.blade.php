@@ -8,6 +8,16 @@
                   <li>
                      <a href="javascript:void(0)" class="waves-effect">
                      <i class="mdi mdi-av-timer fa-fw" data-icon="v"></i>
+                     <span class="hide-menu"> Landing Page
+                     <span class="fa arrow"></span><span class="label label-rouded label-inverse pull-right">4</span></span></a>
+                     <ul class="nav nav-second-level">
+                        <li> <a href="{{ URL('banners') }}"><i class=" fa-fw"></i><span class="hide-menu">Banners</span></a> </li>
+                     </ul>
+                  </li>
+
+                  <li>
+                     <a href="javascript:void(0)" class="waves-effect">
+                     <i class="mdi mdi-av-timer fa-fw" data-icon="v"></i>
                      <span class="hide-menu"> Purchasing
                      <span class="fa arrow"></span><span class="label label-rouded label-inverse pull-right">4</span></span></a>
                      <ul class="nav nav-second-level">

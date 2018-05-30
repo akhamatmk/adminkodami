@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Kodami\Models\Mysql\KodamiProduct;
+use Kodami\Models\Mysql\KodamiProductImage;
 use Kodami\Models\Mysql\Category;
 use Yajra\DataTables\Facades\DataTables;
+use Carbon\Carbon;
 use DB;
 
 class ProductKodamiController extends Controller
@@ -33,7 +35,7 @@ class ProductKodamiController extends Controller
             return number_format($data->price);
         })
         ->addColumn('primary_image', function($data){
-            return '<img src="'.$data->primary_image.'" width="100px" height="100px" />';
+            return '<img src="'.$data->primary_image.'" width="100px"  />';
         })
         ->rawColumns(['action', 'primary_image'])
         ->make();
@@ -58,7 +60,48 @@ class ProductKodamiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = $request->category;
+        $category2 = $request->category2;
+        $category3 = $request->category3;
+        $images = $request->product_images;
+        
+        $KodamiProduct = new KodamiProduct;
+
+        if($category3 != -1)
+            $KodamiProduct->category_id = $category3;
+        else if($category3 != -1)
+            $KodamiProduct->category_id = $category2;
+        else if($category != -1)
+            $KodamiProduct->category_id = $category;
+        
+        $KodamiProduct->name = $request->name;
+        $KodamiProduct->name_alias = str_replace(" ", "_", strtolower($request->name));
+        $KodamiProduct->description = $request->short_description;
+        $KodamiProduct->long_description = $request->long_description;
+        $KodamiProduct->primary_image = $request->product_image_primary;
+        $KodamiProduct->weight = (int) $request->weight;
+        $KodamiProduct->price = (int) 0;
+        $KodamiProduct->save();
+
+        $dataImage = [];
+        $a = 0;
+        foreach ($images as $key => $value) {
+            if(isset($value))
+            {
+                $dataImage[$a] = array(
+                    'kodami_product_id' => $KodamiProduct->id,
+                    'image'             => $value,
+                    'created_at'        => Carbon::now(),
+                    'updated_at'        => Carbon::now(),
+                );
+                $a++;
+            }
+        }
+
+        if(count($dataImage) > 0)
+            \DB::table('kodami_product_images')->insert($dataImage);
+
+        return redirect('product');
     }
 
     /**

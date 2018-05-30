@@ -25,6 +25,8 @@
       <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
       <!-- Custom CSS -->
       <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+      <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
       
       <link href="{{ asset('assets/css/costume.css') }}" rel="stylesheet">
       <!-- color CSS -->
