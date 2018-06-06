@@ -19,12 +19,24 @@ Route::post('banners/{id}/edit')->uses('BannerController@put');
 Route::get('banners/destroy/{id}')->uses('BannerController@destroy');
 Route::resource('banners', 'BannerController');
 
+Route::post('advertisement/{id}/edit')->uses('AdvertisementController@put');
+Route::get('advertisement/destroy/{id}')->uses('AdvertisementController@destroy');
+Route::resource('advertisement', 'AdvertisementController');
+
+Route::post('our-product/{id}/edit')->uses('OurProductController@put');
+Route::get('our-product/destroy/{id}')->uses('OurProductController@destroy');
+Route::resource('our-product', 'OurProductController');
+
 Route::get('product/getData', 'ProductKodamiController@getData');
 Route::resource('product', 'ProductKodamiController');
 
 Route::get('category/ajaxGetChild', 'CategoryController@ajaxGetChild');
 Route::get('category/criteria', 'CategoryController@criteria');
 Route::get('category/spesification', 'CategoryController@spesification');
+
+Route::get('transaction', 'TransactionController@index');
+Route::get('transaction/ajax', 'TransactionController@ajax');
+Route::get('transaction/change/{id}/{type}', 'TransactionController@change');
 
 Route::prefix('vendor')->group(function () {
 	Route::get('intern', 'Vendor\InternController@index');
