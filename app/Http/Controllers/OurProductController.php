@@ -38,7 +38,7 @@ class OurProductController extends Controller
             	$temp .="<a style='margin-left : 10px' type='button' data-id='".$data->id."'class='btn btn-danger delete'>Delete</a>";
             	return $temp;
             })
-            ->rawColumns(['action', 'image'])
+            ->rawColumns(['action', 'image', 'long_description'])
             ->make();
     }
 

@@ -192,6 +192,9 @@
       <!--Style Switcher -->
       <script src="{{ asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js') }}"></script>
 
+      <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+      
+
       @yield('script')
 
    </body>

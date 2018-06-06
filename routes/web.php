@@ -27,6 +27,14 @@ Route::post('our-product/{id}/edit')->uses('OurProductController@put');
 Route::get('our-product/destroy/{id}')->uses('OurProductController@destroy');
 Route::resource('our-product', 'OurProductController');
 
+Route::post('bank/{id}/edit')->uses('BankController@put');
+Route::get('bank/destroy/{id}')->uses('BankController@destroy');
+Route::resource('bank', 'BankController');
+
+Route::post('specialoffer/{id}/edit')->uses('SpecialOfferProductController@put');
+Route::get('specialoffer/destroy/{id}')->uses('SpecialOfferProductController@destroy');
+Route::resource('specialoffer', 'SpecialOfferProductController');
+
 Route::get('product/getData', 'ProductKodamiController@getData');
 Route::resource('product', 'ProductKodamiController');
 
