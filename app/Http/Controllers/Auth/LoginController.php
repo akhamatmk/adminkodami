@@ -45,9 +45,9 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function check()
+    public function check(Request $request)
     {
-        if (Auth::attempt(['email' => 'admin', 'password' => 'admin']))
+        if (Auth::attempt(['email' => 'admin@admin.com', 'password' => 'admin']))
             return redirect('/');
         else
             return redirect('login');

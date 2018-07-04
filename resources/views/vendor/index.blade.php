@@ -21,7 +21,7 @@
        </div>
        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 			<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-				<a id="add-vendor" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" target="_top"> <i class="fa fa-plus"></i> TAMBAH VENDOR</a>
+				<a href="{{ url('vendor/create') }}" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" target="_top"> <i class="fa fa-plus"></i> TAMBAH VENDOR</a>
 				<ol class="breadcrumb">
 					<li><a href="javascript:void(0)">Dashboard</a></li>
 					<li class="active">Dashboard 1</li>
@@ -40,10 +40,10 @@
 				            <tr>
 				                <th>No</th>
 				                <th>Name</th>
-				                <th>Code</th>
-				                <th>PIC</th>
+				                <th>PIC Vendor</th>
 				                <th>Telephone</th>
 				                <th>Email</th>
+				                <th>Status Vendor</th>
 				                <th></th>
 				            </tr>
 				        </thead>
@@ -140,50 +140,17 @@
 	    	var table = $('#vendor-table').DataTable({
 		        processing: true,
 		        serverSide: true,
-		        ajax: '{{ URL::to("vendor/getData") }}',
+		        ajax: '{{ URL::to("vendor/show") }}',
 		        columns: [
-		            { data: 'id', name: 'id' },
+		            { data: 'row', name: 'row' },
 		            { data: 'name', name: 'name' },
-		            { data: 'code', name: 'code' },
 		            { data: 'pic', name: 'pic' },
-		            { data: 'telephone', name: 'telephone' },
+		            { data: 'phone', name: 'phone' },
 		            { data: 'email', name: 'email' },
+		            { data: 'verify', name: 'verify' },
 		            { data: 'action', name: 'action' }
 		        ]
 		    });
-
-	    	$("#add-vendor").click(function(){
-	    		$("#type").val('post');
-	    		$("#id").val(0);
-	    		$("#myModal").modal("show");
-	    	});
-
-	    	$(".edit-vendor").click(function(){
-	    		var id = $(this).data('id');
-	    		alert(id);
-	    	});
-
-	    	$(".delete-vendor").click(function(){
-	    		var id = $(this).data('id');
-	    		alert(id);
-	    	});
-
-	    	$("#submit").click(function(){
-	    		var type = $("#type").val();
-	    		var url = "{{ URL('vendor') }}";
-
-	    		$.ajax({
-	    			type: type,
-					url: url,
-					data : $("#form-vendor").serialize(),
-					dataType: 'json',
-					success: function(data){
-						$("#myModal").modal("hide");
-						table.ajax.reload();
-					}
-	    		});
-	    	});
-
 		});
 	</script>
 @endsection

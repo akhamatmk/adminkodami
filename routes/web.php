@@ -46,6 +46,20 @@ Route::get('transaction', 'TransactionController@index');
 Route::get('transaction/ajax', 'TransactionController@ajax');
 Route::get('transaction/change/{id}/{type}', 'TransactionController@change');
 
+Route::resource('landing/page/category/product', 'LandingPageCategoryProductController');
+
+Route::resource('landing/page/category/product/{id}/detail', 'LandingPageCategoryProductDetailController');
+Route::get('landing/page/category/product/{id}/detail/delete/{id_sub}', 'LandingPageCategoryProductDetailController@destroy');
+
+Route::post('vendor/{id_koprasi}/product/{id}/change/status', 'Vendor\ProductController@change_status');
+Route::get('vendor/{id_koprasi}/product/{id}/detail', 'Vendor\ProductController@detail');
+Route::resource('vendor/{id}/product', 'Vendor\ProductController');
+
+Route::post('vendor/{id}/change/status', 'VendorController@change_status');
+Route::resource('vendor', 'VendorController');
+Route::get('vendor/{id}/detail', 'VendorController@detail');
+
+
 Route::prefix('vendor')->group(function () {
 	Route::get('intern', 'Vendor\InternController@index');
 	Route::get('intern/getData', 'Vendor\InternController@getData');

@@ -15,6 +15,7 @@
                         <li> <a href="{{ URL('advertisement') }}"><i class=" fa-fw"></i><span class="hide-menu">Advertisement</span></a> </li>
                         <li> <a href="{{ URL('our-product') }}"><i class=" fa-fw"></i><span class="hide-menu">Our Product Choice</span></a> </li>
                         <li> <a href="{{ URL('specialoffer') }}"><i class=" fa-fw"></i><span class="hide-menu">Special Offer</span></a> </li>
+                        <li> <a href="{{ URL('landing/page/category/product') }}"><i class=" fa-fw"></i><span class="hide-menu">Category</span></a> </li>
                      </ul>
                   </li>
 
@@ -28,18 +29,13 @@
                         <li> <a href="{{ URL('requestForQuotation') }}"><i class=" fa-fw"></i><span class="hide-menu">Request For Quotation</span></a> </li>
                         <li> <a href="{{ URL('purchase-order') }}"><i class=" fa-fw"></i><span class="hide-menu">Purchase Order</span></a> </li>
                      </ul>
-                  </li>
+                  </li>                  
 
                   <li>
-                     <a href="javascript:void(0)" class="waves-effect">
+                     <a href="{{ URL('vendor') }}" class="waves-effect">
                      <i class="mdi mdi-av-timer fa-fw" data-icon="v"></i>
                      <span class="hide-menu"> Vendor
                      <span class="fa arrow"></span><span class="label label-rouded label-inverse pull-right">4</span></span></a>
-                     <ul class="nav nav-second-level">
-                        <li> <a href="{{ URL('vendor/intern') }}"><i class=" fa-fw"></i><span class="hide-menu">Vendor All</span></a> </li>
-                        <li> <a href="{{ URL('vendor/koprasi') }}"><i class=" fa-fw"></i><span class="hide-menu">Vendor Unregistered </span></a> 
-                        </li>
-                     </ul>
                   </li>
 
                   <li>
