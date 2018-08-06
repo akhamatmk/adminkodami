@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Transaction;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use JD\Cloudder\Facades\Cloudder;
 use Kodami\Models\Mysql\Transaction;
-use Kodami\Models\Mysql\Category;
+use Kodami\Models\Mysql\Member_2 as Member;
 use Yajra\DataTables\Facades\DataTables;
 use DB;
 
-class TransactionController extends Controller
+class SaldoController extends Controller
 {
-	public function index(Request $request)
-    {    	
-		return view('transaction.index');
+    public function index()
+    {
+        return view('transaction.saldo.index');
     }
 
-    public function ajax()
+    public function show()
     {
     	DB::statement(DB::raw('set @rownum=0'));        
-    	$model = Transaction::select('transactions.*', DB::raw('@rownum  := @rownum  + 1 AS row'))->where('type_transaction', 1);
+    	$model = Transaction::select('transactions.*', DB::raw('@rownum  := @rownum  + 1 AS row'))->where('type_transaction', 2);
 
 		return DataTables::eloquent($model)
             ->addColumn('price', function($data){
@@ -72,7 +72,7 @@ class TransactionController extends Controller
             ->addColumn('action', function($data){
             	$temp = "";
             	if($data->status == 0){
-            		$temp .="<a type='button' data-id='".$data->id."' data-change='1' class='btn btn-primary change'>Confirm Pembayaran</a>";
+            		$temp .="<a type='button' data-id='".$data->id."' data-change='2' class='btn btn-primary change'>Confirm Pembayaran</a>";
             		$temp .="<a style='margin-left : 10px' type='button' data-id='".$data->id."' data-change='4' class='btn btn-danger change'>Gagalkan Transaksi</a>";
             	}
 
@@ -91,6 +91,17 @@ class TransactionController extends Controller
 
 		$data->status = (int) $type;
 		$data->save();
-		return redirect('transaction');		    	
+
+		if($type == 2)
+		{
+			$member = Member::find($data->member_id);
+			if($member)
+			{
+				$member->saldo = $member->saldo + $data->price_product;
+				$member->save();
+			}
+		}
+		
+		return redirect('transaction/saldo');
     }
 }

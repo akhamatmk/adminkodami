@@ -42,6 +42,10 @@ Route::get('category/ajaxGetChild', 'CategoryController@ajaxGetChild');
 Route::get('category/criteria', 'CategoryController@criteria');
 Route::get('category/spesification', 'CategoryController@spesification');
 
+
+Route::get('transaction/saldo/change/{id}/{type}', 'Transaction\SaldoController@change');
+Route::resource('transaction/saldo', 'Transaction\SaldoController');
+
 Route::get('transaction', 'TransactionController@index');
 Route::get('transaction/ajax', 'TransactionController@ajax');
 Route::get('transaction/change/{id}/{type}', 'TransactionController@change');
